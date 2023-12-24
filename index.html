@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Carnet Digital</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+  
+</head>
+<body>
+
+  <div class="container">
+    <h1>Generador de Carnet</h1>
+    <form id="carnetForm" action="javascript:generarCarnet();">
+      
+      
+
+      <div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombre" id="nombre" required >
+					
+				</div>
+				<p class="formulario__input-error">Maximo 10 caracteres no se aceptan numeros ni simbolos</p>
+			</div>
+
+      <div class="formulario__grupo" id="grupo__apellido">
+				<label for="apellido" class="formulario__label">Apellido</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="apellido" id="apellido" required >
+					
+				</div>
+				<p class="formulario__input-error">Maximo 10 caracteres no se aceptan numeros ni simbolos</p>
+			</div>
+      <div class="formulario__grupo">
+        <label for="fechaNacimiento" class="formulario__label">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+      </div>
+      
+
+      <div class="formulario__grupo" id="grupo__dni">
+				<label for="dni" class="formulario__label">DNI</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="dni" id="dni" required >
+					
+				</div>
+				<p class="formulario__input-error">DNI no valido, se necesitan 8 digitos</p>
+			</div>
+    
+      <div class="formulario__grupo" id="grupo__escuela">
+				<label for="escuela" class="formulario__label">Escuela</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="escuela" id="escuela" required >
+	
+				</div>
+				<p class="formulario__input-error">Maximo 11 caracteres</p>
+			</div>
+      <div class="formulario__grupo">
+        <label for="opcion" class="formulario__label">Grado</label>
+      <select id="opcion" name="opcion" required class="select">
+        <option value="Blanco">Blanco</option>
+        <option value="Blanco P. Amarilla">Blanco punta Amarilla</option>
+        <option value="Amarillo">Amarillo</option>
+        <option value="Amarillo P. Verde">Amarillo punta Verde</option>
+        <option value="Verde">Verde</option>
+        <option value="Verde P. Azul">Verde punta Azul</option>
+        <option value="Azul">Azul</option>
+        <option value="Azul P. Roja">Azul punta Roja</option>
+        <option value="opciRojoon1">Rojo</option>
+        <option value="Rojo P. Negra">Rojo punta Negra</option>
+        <option value="I Dan">I Dan</option>
+        <option value="II Dan">II Dan</option>
+        <option value="III Dan">III Dan</option>
+        <option value="IV Dan">IV Dan</option>
+        <option value="V Dan">V Dan</option>
+        <option value="VI Dan">VI Dan</option>
+        <option value="VII Dan">VII Dan</option>
+        <option value="VIII Dan">VIII Dan</option>
+        <option value="IX Dan">IX Dan</option>
+
+      </select>
+      </div>
+      
+      <div class="formulario__grupo">
+        <label for="imageInput" class="formulario__label">Imagen</label>
+        <input type="file" id="imageInput" accept="image/jpeg, image/png" required>
+      </div>
+      
+
+      <div class="contenedor-btn">
+        <button type="button" onclick="generarCarnet()">Generar Carnet</button>
+      </div>
+    </form>
+    
+
+  </div>
+  <script src="validate.js"></script>
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
